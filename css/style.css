@@ -1,0 +1,12 @@
+#mapid 
+{ 
+	width: 1200px;
+    height: 800px;
+    position: relative;
+    outline: none;
+}
+#infoStation
+ {
+    width: 420px;
+    display:block;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+      <div id="mapid"></div>
+      <div id="infoStation">
+
+          <h1>Informations sur la station :</h1>
+          
+          <ul id="listInfo">
+              <li>Nom : <span id="nameStation"></span></li>
+              <li>Adresse : <span id="addressStation"></span></li>
+              <li>Etat : <span id="stateStation"></span></li>
+              <li>Vélos disponibles : <span id="bikeAvai"></span></li>
+              <li>Stand disponibles : <span id="standAvai"></span></li>
+          </ul>
+  
+        </div>
+      <script src="js/ajax.js"></script>
+      <script src="js/map.js"></script>
+      <script src="js/station.js"></script>
+  </body>
+</html>
+      
+
