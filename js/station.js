@@ -6,9 +6,10 @@ ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=toulouse&apiKey=81430
     listStations.forEach(function(station) {
         L.marker([station.position.lat,station.position.lng]).addTo(mymap)
         .bindPopup(station.name)
-        L.marker("click"),function(){
-        alert("click",this.onMapClick)
-        }
+        L.marker('click'),function(){
+        Station.treatmentDataStation(reponse);
+        Station.insertDataStation();
+    }
     });
     })
 
