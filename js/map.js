@@ -9,7 +9,25 @@ var mymap = L.map('mapid').setView([43.604262, 1.443565], 13);
 		id: 'mapbox.streets'
     }).addTo(mymap);
     
-	var popup = L.popup();
 
+	// Appel ajax
+ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=toulouse&apiKey=8143056d9889c2dc39d43642d996fbd89da39bdb", function(reponse) {
+	listStations = JSON.parse(reponse);
 
-	mymap.on('click', this.onMapClick);
+	
+	listStations.forEach((reponseInfoStation) => {
+			var marker =L.marker([reponseInfoStation.position.lat,reponseInfoStation.position.lng]).addTo(mymap)
+			.bindPopup(reponseInfoStation.name);
+
+			marker.on('mouseover', function (e) {
+				this.openPopup();
+			});
+			marker.on('mouseout', function (e) {
+				this.closePopup();
+			});
+			marker.on('click', function (e) {
+				Station.treatmentDataStation(reponseInfoStation);
+				Station.insertDataStation();
+			});
+	});
+})
