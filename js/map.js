@@ -11,22 +11,22 @@ var mymap = L.map('mapid').setView([43.604262, 1.443565], 13);
     
 
 	// Appel ajax
-ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=toulouse&apiKey=8143056d9889c2dc39d43642d996fbd89da39bdb", function(reponse) {
+ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=toulouse&apiKey=8143056d9889c2dc39d43642d996fbd89da39bdb", (reponse)=> {
 	listStations = JSON.parse(reponse);
 
 	
-	listStations.forEach((reponseInfoStation) => {
+	listStations.forEach((reponseInfoStation) =>{
 			var currentStation = Object.create(Station);
 			var marker =L.marker([reponseInfoStation.position.lat,reponseInfoStation.position.lng]).addTo(mymap)
 			.bindPopup(reponseInfoStation.name);
 
-			marker.on('mouseover', function () {
+			marker.on('mouseover',() =>{
 				this.openPopup();
 			});
-			marker.on('mouseout', function () {
+			marker.on('mouseout', () =>{
 				this.closePopup();
 			});
-			marker.on('click', function () {
+			marker.on('click', () =>{
 				currentStation.treatmentDataStation(reponseInfoStation);
 				currentStation.insertDataStation();
 			});
