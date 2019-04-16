@@ -16,7 +16,7 @@ var Station = {
         // Etat
         this.state = dataStation.status;
         // Nombre de velo
-        this.nbBike = dataStation.available_bike;
+        this.nbBike = dataStation.available_bikes;
         // Nombre de stand
         this.nbStand = dataStation.available_bike_stands;
     },
