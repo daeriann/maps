@@ -29,6 +29,7 @@ ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=toulouse&apiKey=81430
 			marker.on('click', () =>{
 				currentStation.treatmentDataStation(reponseInfoStation);
 				currentStation.insertDataStation();
+				currentStation.allowReservation();
 			});
 	});
 })
