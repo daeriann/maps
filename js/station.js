@@ -30,6 +30,29 @@ var Station = {
         document.getElementById("bikeAvai").innerHTML = this.nbBike;
         document.getElementById("standAvai").innerHTML = this.nbStand;
     },
+
+    allowReservation : function () {
+        if(this.state === "CLOSED") { 
+    
+            this.state = "FERMER";
+                document.getElementById("stateStation").style.color = "red";
+                document.getElementById("bikeAvai").style.color = "red";
+                this.authorization = false;
+    
+        } else if(this.state === "OPEN") { 
+    
+            this.state = "OUVERT";
+                document.getElementById("stateStation").style.color = "green";
+                this.authorization = true;
+    
+                if(this.nbBike === 0) { 
+                    document.getElementById("bikeAvai").style.color = "red";
+                    this.authorization = false;
+                } else if(this.nbBike > 0) {
+                    document.getElementById("bikeAvai").style.color = "green";
+                }
+        }
+    }
 }
 
 

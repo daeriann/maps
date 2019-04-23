@@ -19,17 +19,17 @@ ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=toulouse&apiKey=81430
 			var currentStation = Object.create(Station);
 			var marker =L.marker([reponseInfoStation.position.lat,reponseInfoStation.position.lng]).addTo(mymap)
 			.bindPopup(reponseInfoStation.name);
-
-			marker.on('mouseover',() =>{
+			
+			marker.on('mouseover',function() {
 				this.openPopup();
 			});
-			marker.on('mouseout', () =>{
+			marker.on('mouseout', function() {
 				this.closePopup();
 			});
 			marker.on('click', () =>{
 				currentStation.treatmentDataStation(reponseInfoStation);
-				currentStation.insertDataStation();
 				currentStation.allowReservation();
+				currentStation.insertDataStation();
 			});
 	});
 })
