@@ -55,4 +55,26 @@ var Station = {
     }
 }
 
+document.getElementById("buttonReservation").querySelector("button").addEventListener("click", function(){
+
+    if(Station.authorization) { 
+
+            
+            document.getElementById("containerCanvas").querySelector("strong").innerHTML = reponseInfoStation.name;
+            
+            document.getElementById("containerCanvas").style.display = "block";
+            
+            window.scrollTo(0,900);
+
+    } else {
+
+            
+            document.getElementById("messageError").style.display = "block";
+            
+            setTimeout(function() {
+                    document.getElementById("messageError").style.display = "none";
+            },5000);
+    }
+
+});
 

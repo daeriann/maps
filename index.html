@@ -11,20 +11,75 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-      <div id="mapid"></div>
-      <div id="infoStation">
+    <section > 
 
-          <h1>Informations sur la station :</h1>
+      <header> 
+        <h1>Louer votre Vélib'</h1>
+      </header> 
+
+        <article>
+
+          <div id="mapid"></div>
+              
+          <div id="infoStation"  style="display: block;"> 
+
+            <h1>Informations sur la station :</h1>
+                  
+              <ul id="listInfo">
+                  <li>Nom : <span id="nameStation"></span></li>
+                  <li>Adresse : <span id="addressStation"></span></li>
+                  <li>Etat : <span id="stateStation"></span></li>
+                  <li>Vélos disponibles : <span id="bikeAvai"></span></li>
+                  <li>Stand disponibles : <span id="standAvai"></span></li>
+              </ul>
+
+              <p id="buttonReservation"><button>Réserver</button></p> 
+              <p id="messageError" class="message" style="display: none;">La réservation est impossible à cette station</p>
+
+            </div> 
+
+          </article>
+      
+          <div id="containerCanvas" style="display: none;">
+            <p>Vous étes sur le point de réserver un vélo à la station : <strong><!-- Nom de la station --></strong></p>
+
+            <canvas id="signature" width="380" height="200"></canvas> 
           
-          <ul id="listInfo">
-              <li>Nom : <span id="nameStation"></span></li>
-              <li>Adresse : <span id="addressStation"></span></li>
-              <li>Etat : <span id="stateStation"></span></li>
-              <li>Vélos disponibles : <span id="bikeAvai"></span></li>
-              <li>Stand disponibles : <span id="standAvai"></span></li>
-          </ul>
-  
-        </div>
+            <div id="buttonCanvas">
+                <p><button id="buttonValidate"><span class="logoBoutonCanvas"></span>Valider</button></p> 
+                <p><button id="buttonDelete"><span class="logoBoutonCanvas"></span>Effacer</button></p>
+            </div>
+
+          </div>
+
+    </section>
+      <div id="messageConfirmationLeasing" class="message" style="display: none;">
+        Votre réservation est bien enregistrer
+      </div>
+      <div id="cancellationReservation" class="message" style="display: none;">
+          Réservation annuler
+      </div>
+    <section id="sectionLeasing" style="display: none;"> 
+      <header> 
+        <span></span><h1>Location en cours</h1>
+      </header> 
+
+      <div id="messageEndLeasing">
+        Votre réservation à expirer !
+      </div> 
+
+      <div id="messageLeasing">
+        <p>
+        Vous venez de réserver 1 vélo à la station : <strong> <!-- Nom de la station  --> </strong><br>
+        Votre réservation expirera dans : <br>
+        </p>
+        <div id="countdown"></div> 
+
+        <p><button id="cancellation">Annuler la réservation</button></p> 
+
+      </div> 
+      </section>
+
       <script src="js/ajax.js"></script>
       <script src="js/map.js"></script>
       <script src="js/station.js"></script>
