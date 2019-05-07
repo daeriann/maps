@@ -1,4 +1,4 @@
-class Signature {
+export default class Signature {
     
     constructor(){
         this.canvas = document.getElementById("sig-canvas");
@@ -135,4 +135,4 @@ class Signature {
     };
 }
 
-let sign = new Signature();
+

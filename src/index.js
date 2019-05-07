@@ -1,5 +1,5 @@
 import retrieveContent from './query.js';
-
+import Signature from './canvas.js';
 async function showContent() {
   try {
     const content = await retrieveContent();
@@ -14,3 +14,5 @@ async function showContent() {
 }
 
 showContent();
+
+let sign = new Signature();
