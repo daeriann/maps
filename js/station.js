@@ -1,14 +1,17 @@
-//objet station
-var Station = {
-    
-    name : null, 
-    address : null, 
-    state : null, 
-    nbBike : null,
-    nbstand : null, 
-    placeData : document.getElementById("listInfo").querySelectorAll("span"),
 
-    treatmentDataStation : function(dataStation) {
+//objet station
+class Station {
+    
+    constructor(){
+    
+    this.name : null, 
+    this.address : null, 
+    this.state : null, 
+    this.nbBike : null,
+    this.nbstand : null, 
+    this.placeData : document.getElementById("listInfo").querySelectorAll("span"),
+
+    treatmentDataStation (dataStation) {
         // Nom
         this.name = dataStation.name;
         // Adresse
@@ -19,19 +22,19 @@ var Station = {
         this.nbBike = dataStation.available_bikes;
         // Nombre de stand
         this.nbStand = dataStation.available_bike_stands;
-    },
-
+    }
+}
     // ajouter dans la page
-    insertDataStation : function() {
+    insertDataStation(){
 
         document.getElementById("nameStation").innerHTML = this.name;
         document.getElementById("addressStation").innerHTML = this.address;
         document.getElementById("stateStation").innerHTML = this.state;
         document.getElementById("bikeAvai").innerHTML = this.nbBike;
         document.getElementById("standAvai").innerHTML = this.nbStand;
-    },
+    }
 
-    allowReservation : function () {
+    allowReservation(){
         if(this.state === "CLOSED") { 
     
             this.state = "FERMER";
