@@ -1,15 +1,18 @@
 
 //objet station
-class Station {
+export default class Station {
     
     constructor(){
     
-    this.name : null, 
-    this.address : null, 
-    this.state : null, 
-    this.nbBike : null,
-    this.nbstand : null, 
-    this.placeData : document.getElementById("listInfo").querySelectorAll("span"),
+    this.name = null; 
+    this.address = null; 
+    this.state = null; 
+    this.nbBike = null;
+    this.nbstand = null; 
+    this.placeData = document.getElementById("listInfo").querySelectorAll("span");
+    
+
+    }   
 
     treatmentDataStation (dataStation) {
         // Nom
@@ -23,7 +26,7 @@ class Station {
         // Nombre de stand
         this.nbStand = dataStation.available_bike_stands;
     }
-}
+
     // ajouter dans la page
     insertDataStation(){
 
